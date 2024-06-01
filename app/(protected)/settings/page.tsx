@@ -6,7 +6,7 @@ export default async function SettingsPage() {
     <div>
         ({JSON.stringify(session)})
         <form action={async () => {
-            'use server'
+            'use server';
             await signOut();
         }}>
             <button type='submit'>

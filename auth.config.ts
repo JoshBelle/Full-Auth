@@ -5,7 +5,7 @@ import { LoginSchema } from './schemas';
 import { getUserByEmail } from './data/user';
 
 interface User {
-    // id: string;
+    id: string;
     email: string;
     password: string;
 }
