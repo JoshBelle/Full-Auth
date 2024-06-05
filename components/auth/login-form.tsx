@@ -1,12 +1,17 @@
 'use client'
 import * as z from 'zod'
 import CardWrapper from './card-wrapper'
+import FormError from '../form-error'
+import FormSuccess from '../form-success'
+import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { LoginSchema } from '@/schemas'
 import { useState, useTransition } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Input } from '../ui/input'
+import { Button } from '../ui/button'
+import { login } from '@/actions/login'
 import { 
   Form,
   FormControl,
@@ -15,10 +20,6 @@ import {
   FormLabel,
   FormMessage 
 } from '@/components/ui/form'
-import { Button } from '../ui/button'
-import FormError from '../form-error'
-import FormSuccess from '../form-success'
-import { login } from '@/actions/login'
 
 export default function LoginForm() {
   const searchParams  = useSearchParams()
@@ -94,6 +95,16 @@ export default function LoginForm() {
                         type='password'
                       />
                     </FormControl>
+                    <Button
+                      size='sm'
+                      variant='link'
+                      asChild
+                      className='px-0 font-normal'
+                    >
+                      <Link href='/auth/reset'>
+                        Forgot password?
+                      </Link>
+                    </Button>
                     <FormMessage/>
                   </FormItem>
                 )}
