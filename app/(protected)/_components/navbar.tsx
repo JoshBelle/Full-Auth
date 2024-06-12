@@ -39,7 +39,7 @@ export default function Navbar() {
                     asChild
                     variant={pathname === '/settings' ? 'default' : 'outline'}
                 >
-                    <Link href='/'>
+                    <Link href='/settings'>
                         Settings
                     </Link>
                 </Button>
